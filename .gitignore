@@ -1,0 +1,15 @@
+# Ignore local Terraform downloaded plugins
+.terraform/
+
+# Ignore Terraform state files (CRITICAL SECURITY RISK)
+*.tfstate
+*.tfstate.backup
+
+# Ignore SSH keys (CRITICAL SECURITY RISK)
+*.pem
+
+# Ignore Terraform lock files (Optional, but good for clean repos)
+.terraform.lock.hcl
+
+# Ignore secret variables file
+terraform.tfvars
