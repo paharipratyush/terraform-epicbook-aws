@@ -9,7 +9,7 @@
 ## 📌 Overview
 This repository contains the Infrastructure as Code (IaC) to automatically provision a highly secure, production-style 2-tier architecture on AWS. It deploys a full-stack Node.js/MySQL application ("EpicBook") with **Zero-Touch Automation**. 
 
-Once `terraform apply` is executed, the infrastructure is built, the OS is configured, the database is seeded, and the application is served to the internet—entirely hands-free.
+Once `terraform apply` is executed, the infrastructure is built, the OS is configured, the database is seeded, and the application is served to the internet entirely hands-free.
 
 ## 🏗️ Architecture Design
 * **Network:** Custom VPC (`10.0.0.0/16`) with 1 Public Subnet and 2 Private Subnets (Multi-AZ).
@@ -54,8 +54,7 @@ For security, database passwords are not hardcoded in this repository. You must 
 1. Create a file named exactly ```terraform.tfvars``` in the root directory.
 2. Add your highly secure database password to the file:
 ```bash
-aws ec2 create-key-pair --region ap-south-1 --key-name epicbook-key --query 'KeyMaterial' --output text > epicbook-key.pem
-chmod 400 epicbook-key.pem
+db_password = "YourSuperSecretPassword123!"
 ```
 ### Step 4: Provision the Infrastructure
 Initialize Terraform to download the required AWS providers:
